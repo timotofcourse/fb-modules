@@ -1,4 +1,3 @@
-import time
 import platform
 
 if __name__ == '__main__':
@@ -12,4 +11,3 @@ if __name__ == '__main__':
     def ver():
         platform.version()
 
-    

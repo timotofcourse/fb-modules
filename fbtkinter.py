@@ -101,4 +101,38 @@ if __name__ == '__main__':
             print('Error: {} not supported'.format(mode))
 
     
+    # Slider
+
+    def slider(master, command, px, py, mode, var):
+        var = customtkinter.CTkSlider(master, from_=0, to=100, command=command)
+        if mode == 'pack':
+            var.pack(padx=px, pady=py)
+        elif mode == 'grid':
+            var.grid(row=px, column=py)
+        else:
+            print('Error: {} not supported'.format(mode))
+
+
+    # Progressbar
+
+    def progress(master, px, py, mode, pmode, speed, var):
+        if pmode == 'normal':
+            var = customtkinter.CTkProgressBar(master, mode='determinate', determinate_speed=speed)
+        elif pmode == 'inv':
+            var = customtkinter.CTkProgressBar(master, mode='indeterminate', indeterminate_speed=speed)
+        else:
+            print('Not found')
+
+        if mode == 'pack':
+            var.pack(padx=px, pady=py)
+        elif mode == 'grid':
+            var.grid(row=px, column=py)
+        else:
+            print('Error: {} not supported'.format(mode))
+
+    # Dialog
+
+    def diag(text, title, var):
+        var = customtkinter.CTkInputDialog(text=text, title=title)
+    
     

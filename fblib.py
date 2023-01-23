@@ -31,7 +31,7 @@ if __name__ == '__main__':
             pros = Manager.list()
             processes = []
             for i in range(5):
-                var = process(target=proclist, args=(procs, i,)
+                var = process(target=proclist, args=(procs, i,))
                 var.start()
                 processes.append(p)
             for p in processes:

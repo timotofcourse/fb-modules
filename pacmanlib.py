@@ -22,6 +22,21 @@ if __name__ == '__main__':
                 var.wait()
             else:
                 print('Action not supported')
+        elif pm == pacman:
+            if action == 'install':
+                pacman.install(pkgs)
+            elif action == 'update':
+                pacman.upgrade()
+            elif action == 'remove':
+                pacman.remove(pkgs)
+                pacman.needs_for(pkgs)
+            elif action == 'update and install':
+                var2 = subprocess.Popen(pm  + upd + confirm)
+                var2.wait()
+                var = subprocess.Popen(pm + inst + confirm)
+                var.wait()
+            else:
+                print('Action not supported')
         else :
             if action == 'install':
                 var = subprocess.Popen('sudo ' + pm + inst + pkgs + confirm)

@@ -41,9 +41,7 @@ if __name__ == '__main__':
         if mode == 'pack':
             f.pack(padx=px, pady=py, sticky=sti)
         elif mode == 'grid':
-            f.grid(padx=px, pady=py, sticky=sti)
-        elif mode == 'place':
-            f.place(padx=px, pady=py, sticky=sti)
+            f.grid(row=px, colimn=py, sticky=sti)
         else:
             print('Error: {} not supported'.format(mode))
 
@@ -55,12 +53,52 @@ if __name__ == '__main__':
         a.config(state)
 
         if mode == 'pack':
-            a.pack(row=px, colimn=py)
+            a.pack(padx=px, pady=py)
         elif mode == 'grid':
             a.grid(row=px, colimn=py)
-        elif mode == 'place':
-            a.place(row=px, colimn=py)
         else:
             print('Error: {} not supported'.format(mode))
 
-    # 
+    # Scrollbar
+
+    def scroll(master, mode, px, py, stick):
+        tbox = tkinter.Text(master, highlightthickness=0)
+        ctbox = customtkinter.CTkScrollbar(master, command=tbox.yview)
+        tbox.configure(yscrollcommand=ctbox.set)
+
+        if mode == 'pack':
+            tbox.pack(padx=px, pady=py, sticky=stick)
+            ctbox.pack(padx=px, pady=py + 1, sticky=stick)
+        elif mode == 'grid':
+            tbox.grid(row=px, column=py, sticky=stick)
+            ctbox.pack(row=px, column=py + 1, sticky=stick)
+        else:
+            print('Error: {} not supported'.format(mode))
+
+    # Button
+
+    def button(master, text, command, px, py, mode, cradius, bradius):
+        btn = customtkinter.CTkButton(master, text=text, command=command, border_width=bradius, corner_radius=cradius)
+
+        if mode == 'pack':
+            btn.pack(padx=px, pady=py)
+        elif mode == 'grid':
+            btn.grid(row=px, column=py)
+        else:
+            print('Error: {} not supported'.format(mode))
+
+    
+    # Checkbox
+
+    def check(master, text, var, mode, on, off, command, px, py, nm):
+        nm = customtkinter.CTkCheckBox(master, text=text, variable=var, command=command, onvalue=on, offvalue=off)
+
+        if mode == 'pack':
+            nm.pack(padx=px, pady=py)
+        elif mode == 'grid':
+            nm.grid(row=px, column=py)
+        else:
+            print('Error: {} not supported'.format(mode))
+
+    
+    

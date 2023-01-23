@@ -35,68 +35,68 @@ if __name__ == '__main__':
 
     # Frame
 
-    def frame(master, lar, alt, cradius, px, py, sti, mode):
-        f = customtkinter.CTkFrame(master, width=lar, height=alt, corner_radius=cradius)
+    def frame(master, lar, alt, cradius, px, py, sti, mode, var):
+        var = customtkinter.CTkFrame(master, width=lar, height=alt, corner_radius=cradius)
 
         if mode == 'pack':
-            f.pack(padx=px, pady=py, sticky=sti)
+            var.pack(padx=px, pady=py, sticky=sti)
         elif mode == 'grid':
-            f.grid(row=px, colimn=py, sticky=sti)
+            var.grid(row=px, colimn=py, sticky=sti)
         else:
             print('Error: {} not supported'.format(mode))
 
     # Textbox
 
-    def txtbox(master, px, py, mode, line, txt, state):
-        a = customtkinter.CTkTextbox(master)
-        a.insert(line, txt)
-        a.config(state)
+    def txtbox(master, px, py, mode, line, txt, state, var):
+        var = customtkinter.CTkTextbox(master)
+        var.insert(line, txt)
+        var.config(state)
 
         if mode == 'pack':
-            a.pack(padx=px, pady=py)
+            var.pack(padx=px, pady=py)
         elif mode == 'grid':
-            a.grid(row=px, colimn=py)
+            var.grid(row=px, colimn=py)
         else:
             print('Error: {} not supported'.format(mode))
 
     # Scrollbar
 
-    def scroll(master, mode, px, py, stick):
-        tbox = tkinter.Text(master, highlightthickness=0)
-        ctbox = customtkinter.CTkScrollbar(master, command=tbox.yview)
-        tbox.configure(yscrollcommand=ctbox.set)
+    def scroll(master, mode, px, py, stick, var1, var2):
+        var1 = tkinter.Text(master, highlightthickness=0)
+        var2 = customtkinter.CTkScrollbar(master, command=var1.yview)
+        var1.configure(yscrollcommand=var2.set)
 
         if mode == 'pack':
-            tbox.pack(padx=px, pady=py, sticky=stick)
-            ctbox.pack(padx=px, pady=py + 1, sticky=stick)
+            var1.pack(padx=px, pady=py, sticky=stick)
+            var2.pack(padx=px, pady=py + 1, sticky=stick)
         elif mode == 'grid':
-            tbox.grid(row=px, column=py, sticky=stick)
-            ctbox.pack(row=px, column=py + 1, sticky=stick)
+            var1.grid(row=px, column=py, sticky=stick)
+            var2.pack(row=px, column=py + 1, sticky=stick)
         else:
             print('Error: {} not supported'.format(mode))
 
     # Button
 
-    def button(master, text, command, px, py, mode, cradius, bradius):
-        btn = customtkinter.CTkButton(master, text=text, command=command, border_width=bradius, corner_radius=cradius)
+    def button(master, text, command, px, py, mode, cradius, bradius, var):
+        var = customtkinter.CTkButton(master, text=text, command=command, border_width=bradius, corner_radius=cradius)
 
         if mode == 'pack':
-            btn.pack(padx=px, pady=py)
+            var.pack(padx=px, pady=py)
         elif mode == 'grid':
-            btn.grid(row=px, column=py)
+            var.grid(row=px, column=py)
         else:
             print('Error: {} not supported'.format(mode))
 
     
     # Checkbox
 
-    def check(master, text, var, mode, on, off, command, px, py, nm):
-        nm = customtkinter.CTkCheckBox(master, text=text, variable=var, command=command, onvalue=on, offvalue=off)
+    def check(master, text, var1, mode, on, off, command, px, py, var2):
+        var2 = customtkinter.CTkCheckBox(master, text=text, variable=var1, command=command, onvalue=on, offvalue=off)
 
         if mode == 'pack':
-            nm.pack(padx=px, pady=py)
+            var2.pack(padx=px, pady=py)
         elif mode == 'grid':
-            nm.grid(row=px, column=py)
+            var2.grid(row=px, column=py)
         else:
             print('Error: {} not supported'.format(mode))
 

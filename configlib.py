@@ -1,7 +1,5 @@
-import time
 import configparser
 import json
-import io
 
 jsondict = {}
 
@@ -37,4 +35,3 @@ if __name__ == '__main__':
         with open(filename, "w") as file_object:
             a.write(file_object)
 
-    

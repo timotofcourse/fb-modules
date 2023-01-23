@@ -9,7 +9,7 @@ texthere = ''
 
 if __name__ == '__main__':
 
-    # first part of an app, mainly properties
+    # First part of an app
 
     def mainapp(title, size):
         root = customtkinter.CTk()
@@ -134,5 +134,4 @@ if __name__ == '__main__':
 
     def diag(text, title, var):
         var = customtkinter.CTkInputDialog(text=text, title=title)
-    
     

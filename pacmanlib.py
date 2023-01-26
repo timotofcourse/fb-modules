@@ -62,7 +62,6 @@ if __name__ == '__main__':
         elif pmname == 'chocolatey' or 'choco':
             install = subprocess.Popen("Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))", shell=True)
             install.wait()
-            time.sleep()
         elif pmname == 'winget':
             print('Update windows and winget will be installed')
         else:

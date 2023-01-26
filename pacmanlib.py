@@ -1,5 +1,6 @@
 import pacman
 import subprocess
+import time
 
 if __name__ == '__main__':
 
@@ -54,4 +55,22 @@ if __name__ == '__main__':
             else:
                 print('Action not supported')
             
+    def installwinpm(pmname):
+        if pmname == 'scoop':
+            install = subprocess.Popen('irm get.scoop.sh | iex', shell=True)
+            install.wait()
+        elif pmname == 'chocolatey' or 'choco':
+            install = subprocess.Popen("Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))", shell=True)
+            install.wait()
+            time.sleep()
+        elif pmname == 'winget':
+            print('Update windows and winget will be installed')
+        else:
+            time.sleep()
+            
+    def winpm(pm, action, pkgs, args, var, var2):
+        var = pm + ' ' + action + ' ' + pkgs  + ' ' + args
+        var2 = subprocess.Popen(var, shell=True)
+        var2.wait()
+    
     

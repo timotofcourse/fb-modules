@@ -41,7 +41,7 @@ if __name__ == '__main__':
         if mode == 'pack':
             var.pack(padx=px, pady=py, sticky=sti)
         elif mode == 'grid':
-            var.grid(row=px, colimn=py, sticky=sti)
+            var.grid(row=px, column=py, sticky=sti)
         else:
             print('Error: {} not supported'.format(mode))
 
@@ -55,7 +55,7 @@ if __name__ == '__main__':
         if mode == 'pack':
             var.pack(padx=px, pady=py)
         elif mode == 'grid':
-            var.grid(row=px, colimn=py)
+            var.grid(row=px, column=py)
         else:
             print('Error: {} not supported'.format(mode))
 

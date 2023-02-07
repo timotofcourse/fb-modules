@@ -1,12 +1,10 @@
 import platform
 
-if __name__ == '__main__':
+# Get platform information
 
-    # Get platform information
-
-    def os():
-        platform.system()
+def os():
+    platform.system()
     
-    def ver():
-        platform.version()
+def ver():
+    platform.version()
 

@@ -2,24 +2,27 @@ import time
 import os
 from PIL import Image
 
-pros = []
-textures = 'assets/textures/'
-audio = 'assets/audio/'
-images = 'assets/imgs/'
+# First of all this library is for my own use, you can use it too but some things if not all i made for my specific needs
+
+pros = [] # This list if for processes
+
+# This variables i made to use in my own python games
+
+textures = 'assets/textures/' # Location for textures
+audio = 'assets/audio/' # Location for audios
+images = 'assets/imgs/' # Location for other images that are not textures
 
 
-if __name__ == '__main__':
+# Check if a file exists
 
-    # Check if a file exists
+def find(filename, var):
+    var = os.path.exists(filename)
 
-    def find(filename, var):
-        var = os.path.exists(filename)
+# Load an image
 
-    # Load an image
+def img(load):
+    Image.open(load)
 
-    def img(load):
-        Image.open(load)
-
-    def proclist(proc):
-        pros.append(proc)
+def proclist(proc):
+    pros.append(proc)
     

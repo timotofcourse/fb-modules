@@ -1,6 +1,7 @@
 import time
 import os
 from PIL import Image
+from pygame import mixer
 
 # First of all this library is for my own use, you can use it too but some things if not all i made for my specific needs
 
@@ -11,7 +12,7 @@ pros = [] # This list if for processes
 textures = 'assets/textures/' # Location for textures
 audio = 'assets/audio/' # Location for audios
 images = 'assets/imgs/' # Location for other images that are not textures
-
+models = 'assets/models' # Location for models if i need them
 
 # Check if a file exists
 

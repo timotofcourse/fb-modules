@@ -1,6 +1,5 @@
 import pacman
 import subprocess
-import time
 import os
 
 # Home 

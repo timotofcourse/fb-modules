@@ -20,8 +20,8 @@ mixer.init()
 
 # Check if a file exists
 
-def find(filename, var):
-    var = os.path.exists(filename)
+def find(filename):
+    os.path.exists(filename)
 
 # Load an image
 

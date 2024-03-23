@@ -25,7 +25,7 @@ setup(
         ],
     install_requires=['ruamel.yaml', 'shutil', 'ctypes', 'winotify'],
     extras_require={
-        'dev': ['twine>=5.0.0'],
+        'dev': ['twine>=5.0.0', 'uvicorn>=0.2.2', 'gradio==3.44.1'],
     },
     python_requires='>=3.10'
 )

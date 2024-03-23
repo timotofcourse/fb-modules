@@ -143,6 +143,7 @@ fbmodules.open_link(link='https://example.com/')
 ## Open Steam Link
 
 This function open the steam install prompt for an app or game which is on steam, it only works for games that the user own or free to play games, for the paid games that the user do not have it will give you a steam no license error, it accepts the games argument as a list as show in the next examples with the CS2 (id 730) and Aimlabs (id 714010)
+
 One Game:
 
 ```python

@@ -11,8 +11,8 @@ setup(
     version='0.0.1',
     description='Just a simple set of modules ',
     long_description=readme,
-    package_dir={'': 'fbmodules'}
-    packages=find_packages(where='fb-modules')
+    package_dir={'': 'fbmodules'},
+    packages=find_packages(where='fb-modules'),
     author='Timot',
     author_email='',
     url='https://github.com/timotofcourse/fb-modules',

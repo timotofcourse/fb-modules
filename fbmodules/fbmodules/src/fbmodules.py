@@ -46,7 +46,7 @@ def change_owner(path: str, user: str=None, group: str=None):
 # get current user
 
 def get_current_user():
-    getlogin()
+    return getlogin()
     
 # Check for admin
 

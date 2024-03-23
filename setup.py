@@ -8,7 +8,7 @@ with open('LICENSE.MD', 'r') as f:
     
 setup(
     name='fbmodules',
-    version='0.0.1',
+    version='0.0.2',
     description='Just a simple set of modules ',
     long_description=readme,
     long_description_content_type='text/markdown',

@@ -15,7 +15,7 @@ setup(
     package_dir={'': 'fbmodules'},
     packages=find_packages(where='fbmodules', exclude=('docs')),
     author='Timot',
-    author_email='',
+    author_email='filmabemtv2@gmail.com',
     url='https://github.com/timotofcourse/fb-modules',
     license=license,
     classifiers=[
@@ -25,7 +25,7 @@ setup(
         ],
     install_requires=['ruamel.yaml', 'shutil', 'ctypes', 'winotify'],
     extras_require={
-        'dev': ['twine'],
+        'dev': ['twine>=5.0.0'],
     },
     python_requires='>=3.10'
 )

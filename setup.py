@@ -13,17 +13,16 @@ setup(
     long_description=readme,
     long_description_content_type='text/markdown',
     package_dir={'': 'fbmodules'},
-    packages=find_packages(where='fbmodules'),
+    packages=find_packages(where='fbmodules', exclude=('docs')),
     author='Timot',
     author_email='',
     url='https://github.com/timotofcourse/fb-modules',
     license=license,
-    classiifiers=[
+    classifiers=[
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3.10',
         'Operating System :: OS Independent',
         ],
-    packages=find_packages(exclude=('tests', 'docs')),
     install_requires=['ruamel.yaml', 'shutil', 'ctypes', 'winotify'],
     extras_require={
         'dev': ['twine'],

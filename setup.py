@@ -17,5 +17,9 @@ setup(
     author_email='',
     url='https://github.com/timotofcourse/fb-modules',
     license=license,
-    packages=find_packages(exclude=('tests', 'docs'))
+    packages=find_packages(exclude=('tests', 'docs')),
+    extras_require={
+        'dev': ['twine'],
+    },
+    python_requires='>=3.10'
 )
